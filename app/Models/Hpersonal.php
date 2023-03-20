@@ -13,6 +13,8 @@ class Hpersonal extends Model
 
     protected $primaryKey = 'employeeid';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'employeeid',
         'lastname',

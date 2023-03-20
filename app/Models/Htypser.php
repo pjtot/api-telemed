@@ -13,6 +13,8 @@ class Htypser extends Model
 
     protected $primaryKey = 'tscode';
 
+    public $incrementing = false;
+
     protected $fillable = [
         'tscode',
         'tsdesc',
