@@ -26,4 +26,6 @@ Route::middleware('auth:sanctum')->group(function () {
         $request->user()->currentAccessToken()->delete();
         return response()->json(['message' => 'Logged out']);
     });
+
+    Route::get('/hperson', App\Http\Controllers\HpersonController::class);
 });

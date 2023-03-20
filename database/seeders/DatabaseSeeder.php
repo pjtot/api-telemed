@@ -40,5 +40,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@demo.com',
             'password' => bcrypt('password'),
         ]);
+
+        \App\Models\Hperson::factory(100)->create();
     }
 }
