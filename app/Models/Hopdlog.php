@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Mehradsadeghi\FilterQueryString\FilterQueryString;
 
 class Hopdlog extends Model
 {
-    use HasFactory;
+    use HasFactory, FilterQueryString;
 
     protected $table = 'hopdlog';
 
@@ -33,4 +34,24 @@ class Hopdlog extends Model
     ];
 
     public $timestamps = false;
+
+    public $filters = [
+        'enccode',
+        'hpercode',
+        'opddate',
+        'limit',
+        'like',
+    ];
+
+    protected $with = [ 'patient' ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Hperson::class, 'hpercode', 'hpercode');
+    }
+
+    public function limit($query, $value): \Illuminate\Database\Eloquent\Builder
+    {
+        return $query->limit($value);
+    }
 }

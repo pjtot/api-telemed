@@ -39,6 +39,9 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
             'email' => 'admin@demo.com',
             'password' => bcrypt('password'),
+            'employeeid' => \App\Models\Hpersonal::factory()->create([
+                'deptcode' => 'MEDIC',
+            ])->employeeid,
         ]);
 
         \App\Models\Hperson::factory(100)->create();
