@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('hperson', function (Blueprint $table) {
-            $table->string('hpercode')->primary();
+            $table->string('hpercode', 15)->primary();
             $table->string('patlast');
             $table->string('patfirst');
             $table->string('patbdate');

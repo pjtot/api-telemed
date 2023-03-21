@@ -31,5 +31,11 @@ class Hperson extends Model
         'patlast',
         'patfirst',
         'like',
+        'limit',
     ];
+
+    public function limit($query, $value): \Illuminate\Database\Eloquent\Builder
+    {
+        return $query->limit($value);
+    }
 }

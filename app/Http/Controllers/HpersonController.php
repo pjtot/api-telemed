@@ -8,7 +8,7 @@ class HpersonController extends Controller
 {
     public function __invoke()
     {
-        $all = Hperson::filter()->limit(1000)->get();
+        $all = Hperson::filter()->get();
 
         return response()->json($all);
     }

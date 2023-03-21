@@ -14,7 +14,7 @@ class HpersonFactory extends Factory
     public function definition(): array
     {
         return [
-            'hpercode' => fake()->unique()->numberBetween(1000000, 9999999),
+            'hpercode' => str_pad(strval(fake()->unique()->numberBetween(1000000, 9999999)), 15, '0', STR_PAD_LEFT),
             'patlast' => fake()->lastName(),
             'patfirst' => fake()->firstName(),
             'patbdate' => fake()->date(),
