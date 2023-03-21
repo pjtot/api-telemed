@@ -42,5 +42,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Hperson::factory(100)->create();
+
+        $this->call([
+            EncounterSeeder::class,
+        ]);
     }
 }
