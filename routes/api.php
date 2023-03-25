@@ -21,7 +21,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/patients', PatientController::class);
     Route::get('/encounters', [EncounterController::class, 'index']);
-    Route::post('/encounters/generate', [EncounterController::class, 'generate']);
+    Route::post('/encounters', [EncounterController::class, 'generate']);
 });
 
 Route::get('/services', ServiceController::class);

@@ -35,7 +35,7 @@ class EncounterController extends Controller
             'priority' => 'required',
             'teleconsultation' => 'required',
         ]);
-
+        
         $enccode = $this->generateEncounter(
             $validated['hpercode'],
             $validated['tscode'],
