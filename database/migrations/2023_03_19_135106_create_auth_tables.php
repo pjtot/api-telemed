@@ -11,13 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('htypser', function (Blueprint $table) {
-            $table->string('tscode')->primary();
-            $table->string('tsdesc');
-            $table->enum('tsstat', ['A', 'I']);
-            $table->string('tstype');
-        });
-        
         Schema::create('hpersonal', function (Blueprint $table) {
             $table->string('employeeid')->primary();
             $table->string('lastname');
@@ -46,6 +39,5 @@ return new class extends Migration
         });
 
         Schema::dropIfExists('hpersonal');
-        Schema::dropIfExists('htypser');
     }
 };

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Mehradsadeghi\FilterQueryString\FilterQueryString;
 
 class Htypser extends Model
 {
-    use HasFactory;
+    use HasFactory, FilterQueryString;
 
     protected $table = 'htypser';
 
@@ -15,12 +16,12 @@ class Htypser extends Model
 
     public $incrementing = false;
 
-    protected $fillable = [
+    public $timestamps = false;
+
+    public $filters = [
         'tscode',
-        'tsdesc',
         'tsstat',
         'tstype',
+        'sort',
     ];
-
-    public $timestamps = false;
 }

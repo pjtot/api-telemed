@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\EncounterController;
+use App\Http\Controllers\ServiceController;
 
 Route::post('/login', LoginController::class);
 
@@ -20,10 +21,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/hperson', App\Http\Controllers\HpersonController::class);
     Route::get('/encounters', [EncounterController::class, 'index']);
     Route::post('/encounters/generate', [EncounterController::class, 'generate']);
-
-    // create a route group for encounter
-    // Route::prefix('encounters')->group(function () {
-    //     Route::get('/', [EncounterController::class, 'index']);
-    //     Route::post('/generate', [EncounterController::class, 'generate']);
-    // });
 });
+
+Route::get('/services', ServiceController::class);

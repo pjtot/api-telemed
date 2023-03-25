@@ -4,9 +4,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Hpersonal>
- */
 class HpersonalFactory extends Factory
 {
     protected $model = \App\Models\Hpersonal::class;
