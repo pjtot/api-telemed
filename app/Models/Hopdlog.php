@@ -42,13 +42,19 @@ class Hopdlog extends Model
         'disinstruc',
         'limit',
         'like',
+        'sort',
     ];
 
-    protected $with = [ 'patient' ];
+    protected $with = [ 'patient', 'service' ];
 
     public function patient()
     {
         return $this->belongsTo(Hperson::class, 'hpercode', 'hpercode');
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Htypser::class, 'tscode', 'tscode');
     }
 
     public function limit($query, $value): \Illuminate\Database\Eloquent\Builder
