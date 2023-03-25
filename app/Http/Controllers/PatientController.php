@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hperson;
 
-class HpersonController extends Controller
+class PatientController extends Controller
 {
     public function __invoke()
     {

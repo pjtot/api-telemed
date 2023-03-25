@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PatientController;
 use App\Http\Controllers\EncounterController;
 use App\Http\Controllers\ServiceController;
 
@@ -18,7 +19,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return response()->json(['message' => 'Logged out']);
     });
 
-    Route::get('/hperson', App\Http\Controllers\HpersonController::class);
+    Route::get('/patients', PatientController::class);
     Route::get('/encounters', [EncounterController::class, 'index']);
     Route::post('/encounters/generate', [EncounterController::class, 'generate']);
 });
