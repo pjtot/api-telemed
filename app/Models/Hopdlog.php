@@ -39,6 +39,7 @@ class Hopdlog extends Model
         'enccode',
         'hpercode',
         'opddate',
+        'disinstruc',
         'limit',
         'like',
     ];
