@@ -18,5 +18,12 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::get('/hperson', App\Http\Controllers\HpersonController::class);
-    Route::get('/encounter', [EncounterController::class, 'index']);
+    Route::get('/encounters', [EncounterController::class, 'index']);
+    Route::post('/encounters/generate', [EncounterController::class, 'generate']);
+
+    // create a route group for encounter
+    // Route::prefix('encounters')->group(function () {
+    //     Route::get('/', [EncounterController::class, 'index']);
+    //     Route::post('/generate', [EncounterController::class, 'generate']);
+    // });
 });
