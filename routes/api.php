@@ -7,14 +7,14 @@ use App\Http\Controllers\PatientController;
 use App\Http\Controllers\EncounterController;
 use App\Http\Controllers\ServiceController;
 
-Route::post('/login', LoginController::class);
+Route::post('/auth/login', LoginController::class);
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('/user', function (Request $request) {
+    Route::get('/auth/user', function (Request $request) {
         return $request->user();
     });
 
-    Route::post('/logout', function (Request $request) {
+    Route::post('/auth/logout', function (Request $request) {
         $request->user()->currentAccessToken()->delete();
         return response()->json(['message' => 'Logged out']);
     });
